@@ -53,12 +53,13 @@ function App() {
         .getGeneral(jwt)
         .then((res) => {
           if (res) {
-            if (res) {
-              console.log(res);
-              setUserEmail(res.data.email);
-            }
+            // if (res) {
+            //   console.log(res);
+            //   setUserEmail(res.data.email);
+            // }
             setIsLoggedIn(true);
             navigate("/", { replace: true });
+            setUserEmail(res.data.email);
           }
         })
         .catch(() => console.log("Ошибка"));
