@@ -11,16 +11,7 @@ class ApiRegiser {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        return Promise.reject("Ошибка", response);
-      })
-      .then((res) => {
-        return res;
-      });
+    }).then(this._getResponseData);
   }
 
   login(email, password) {
@@ -30,16 +21,7 @@ class ApiRegiser {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        return Promise.reject("Ошибка", response);
-      })
-      .then((res) => {
-        return res;
-      });
+    }).then(this._getResponseData);
   }
 
   getGeneral(jwt) {
@@ -50,8 +32,14 @@ class ApiRegiser {
         Authorization: `Bearer ${jwt}`,
       },
     })
-      .then((res) => res.json())
+      .then(this._getResponseData)
       .then((data) => data);
+  }
+  _getResponseData(res) {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
+    return res.json();
   }
 }
 
