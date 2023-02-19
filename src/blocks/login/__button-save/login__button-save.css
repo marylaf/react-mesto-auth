@@ -1,0 +1,11 @@
+.login__button-save {
+  margin-top: 181px;
+  min-width: 358px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  padding: 14px 0;
+}

@@ -1,0 +1,27 @@
+.popup__button-drop {
+  width: 32px;
+  height: 32px;
+  border: none;
+  padding: 0;
+  background: none;
+  position: absolute;
+  right: -38px;
+  top: -38px;
+  opacity: 1;
+  background-image: url("../../../images/Close.Icon.svg");
+  background-size: cover;
+}
+
+.popup__button-drop:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.5s linear;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__button-drop {
+    width: 20px;
+    height: 20px;
+    right: 0;
+  }
+}

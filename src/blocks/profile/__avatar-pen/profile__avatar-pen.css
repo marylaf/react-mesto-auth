@@ -1,0 +1,18 @@
+.profile__avatar-pen {
+  width: 120px;
+  height: 120px;
+  background-image: url("../../../images/Vector-pen.svg");
+  display: flex;
+  margin: 0 30px 0 0;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__avatar-pen {
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+}

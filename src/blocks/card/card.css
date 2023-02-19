@@ -1,0 +1,6 @@
+.card {
+  position: relative;
+}
+.card:hover {
+  cursor: pointer;
+}

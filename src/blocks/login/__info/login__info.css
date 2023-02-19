@@ -1,0 +1,13 @@
+.login__info {
+  min-width: 358px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  color: #cccccc;
+  border: none;
+  padding-bottom: 13px;
+  border-bottom: 2px solid #cccccc;
+  background-color: black;
+}

@@ -1,0 +1,6 @@
+.span {
+  min-height: 35px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}

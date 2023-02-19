@@ -1,0 +1,19 @@
+.popup__button-trash {
+  width: 18px;
+  height: 19.3px;
+  border: none;
+  padding: 0;
+  background: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  opacity: 1;
+  background-image: url("../../../images/Trash.svg");
+  background-size: cover;
+}
+
+.popup__button-trash:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.5s linear;
+}
