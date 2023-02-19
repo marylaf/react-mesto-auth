@@ -1,12 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
-import { apiRegister } from "../utils/apiRegister.js";
 
-function Register({ onInfoStatus, handleInfoTooltipOpen, handleStatus }) {
+function Register({ handleInfoTooltipOpen, handleRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -20,17 +17,7 @@ function Register({ onInfoStatus, handleInfoTooltipOpen, handleStatus }) {
     evt.preventDefault();
     const userEmail = email;
     const userPassword = password;
-
-    apiRegister
-      .register(userEmail, userPassword)
-      .then((res) => {
-        handleStatus();
-        navigate("/sign-in", { replace: true });
-      })
-      .catch(() => console.log("Ошибка"))
-      .finally(() => {
-        handleInfoTooltipOpen();
-      });
+    handleRegister(userEmail, userPassword);
   }
 
   return (

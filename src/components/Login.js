@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { apiRegister } from "../utils/apiRegister.js";
-import { useNavigate } from "react-router-dom";
 
-function Login({ handleLogged }) {
+function Login({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -20,16 +16,7 @@ function Login({ handleLogged }) {
     evt.preventDefault();
     const userEmail = email;
     const userPassword = password;
-
-    apiRegister
-      .login(userEmail, userPassword)
-      .then((data) => {
-        localStorage.setItem("jwt", data.jwt);
-        // setUserEmail(email);
-        handleLogged();
-        navigate("/", { replace: true });
-      })
-      .catch(() => console.log("Ошибка"));
+    handleLogin(userEmail, userPassword);
   }
 
   return (
